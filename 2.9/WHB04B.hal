@@ -1,0 +1,38 @@
+loadusr -W /home/probotix/linuxcnc/configs/PROBOTIX/WHB04B.py
+
+#loadrt mult2 count=2
+#addf mult2.0 servo-thread
+setp mult2.0.in0 1
+#addf mult2.1 servo-thread
+setp mult2.1.in0 100
+
+net axis-x-jogenable joint.0.jog-enable axis.x.jog-enable whb04b.sel_x
+net axis-y-jogenable joint.1.jog-enable axis.y.jog-enable whb04b.sel_y
+net axis-z-jogenable joint.2.jog-enable axis.z.jog-enable whb04b.sel_z
+
+net increment-raw whb04b.inc
+net increment-raw mult2.0.in1
+net increment-raw mult2.1.in1
+net joginc mult2.0.out
+net rotary-joginc mult2.1.out
+
+net joginc joint.0.jog-scale axis.x.jog-scale
+net joginc joint.1.jog-scale axis.y.jog-scale
+net joginc joint.2.jog-scale axis.z.jog-scale
+
+net jogcnts whb04b.mpg_cnt
+net jogcnts joint.0.jog-counts axis.x.jog-counts
+net jogcnts joint.1.jog-counts axis.y.jog-counts
+net jogcnts joint.2.jog-counts axis.z.jog-counts
+
+setp axis.x.jog-vel-mode 1
+setp axis.y.jog-vel-mode 1
+setp axis.z.jog-vel-mode 1
+
+setp joint.0.jog-vel-mode 1
+setp joint.1.jog-vel-mode 1
+setp joint.2.jog-vel-mode 1
+
+net reset whb04b.reset
+net start whb04b.start
+net stop  whb04b.stop 
