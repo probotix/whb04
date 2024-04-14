@@ -10,6 +10,7 @@ Installation:
         SUBSYSTEM=="usb", ATTR{idVendor}=="10ce", ATTR{idProduct}=="eb93", MODE="666" 
 - sudo udevadm trigger
 
+-------------------------------------------------------------------------------------------
 
 Updated for LinuxCNC 2.9+ & Python3
 - Added secondary function key signals
