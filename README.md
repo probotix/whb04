@@ -13,6 +13,7 @@ Installation:
 
 Updated for LinuxCNC 2.9+ & Python3
 - Added secondary function key signals
+
 Installation on LinuxCNC 2.9+:
 - install python usb module "sudo apt-get install python3-usb"
 - shouldn't need to change udev rules
